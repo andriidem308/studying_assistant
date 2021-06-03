@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Нова задача{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+
+    <div class="error">
+        {{ form.errors }}
+    </div>
+    <div class="payload">
+        <form action="{% url "task_create" %}" method="post">
+            {% csrf_token %}
+            {{form.title}}
+            {{form.description}}
+            <br><br>
+            {{form.testfile}}
+            <br><br>
+            {{form.group_id}}
+            <br><br>
+            <button class="btn btn-success">Створити завдання</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
