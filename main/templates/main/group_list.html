@@ -8,6 +8,8 @@
     <h1>{{ title }}</h1>
     <div class="payload">
         <ul>
+            <a href="{% url 'group_create' %}"><button class="btn btn-secondary"> Створити групу</button></a>
+            <hr>
             {% for group in group_list %}
             <h4>
                 <a href="{% url 'group_show' group_id=group.id %}">{{ group.name }}</a>

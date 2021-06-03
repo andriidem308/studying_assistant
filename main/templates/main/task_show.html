@@ -1,0 +1,10 @@
+{% extends "main/base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block  content %}
+    {% load static %}
+    <h1>Задача "{{ title }}"</h1>
+    <div class="task">
+        <h3 class="grey summary">{{ description }}</h3>
+    </div>
+{% endblock %}

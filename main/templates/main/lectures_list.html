@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Лекції групи</h1>
+    <div class="payload">
+        <ul>
+            <a href="{% url 'lecture_create' %}"><button class="btn btn-secondary">Нова лекція</button></a>
+            <br><br>
+            {% for group in group_list %}
+            <h4 class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="{% url 'lectures_show' group_id=group.id %}">{{ group.name }}</a>
+            </h4>
+            <hr>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

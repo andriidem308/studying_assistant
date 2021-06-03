@@ -4,10 +4,27 @@
 {% block  content %}
     {% load static %}
     <div class="select2-container"></div>
-    <h1>{{ title }}</h1>
-    <div class="container posts-content">
-        <ul>
-
-        </ul>
+    <h1>Студенти групи {{ title }}</h1>
+    <div class="payload">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col"><span style="color: black; ">ID</span></th>
+                <th scope="col"><span style="color: black; ">Прізвище</span></th>
+                <th scope="col"><span style="color: black; ">Ім'я</span></th>
+                <th scope="col"><span style="color: black; ">Сума балів</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for student in students %}
+            <tr>
+                <th scope="row"><span style="color: #727272; ">{{ student.id }}</span></th>
+                <th scope="row"><span style="color: #727272; ">{{ student.name }}</span></th>
+                <th scope="row"><span style="color: #727272; ">{{ student.surname }}</span></th>
+                <th scope="row"><span style="color: #727272; ">{{ student.grades_sum }}</span></th>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 {% endblock %}

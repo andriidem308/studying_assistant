@@ -10,5 +10,8 @@ make-migration:
 migrate:
 	$(MANAGE) migrate
 
+createsuperuser:
+	$(MANAGE) createsuperuser
+
 lint:
 	flake8 .
