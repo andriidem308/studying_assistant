@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'bootstrap4',
     'main',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'studying_assistant.urls'
@@ -74,6 +76,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'studying_assistant.wsgi.application'
 
+
+# AUTH CONFIGURATION
+AUTH_USER_MODEL = 'account.user'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
